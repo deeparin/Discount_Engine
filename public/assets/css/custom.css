@@ -1,0 +1,23 @@
+body {
+    font-family: 'Inter', 'Prompt', sans-serif;
+}
+.store-card {
+    transition: all 0.25s ease;
+    border: 1px solid #edf0f5;
+}
+
+.store-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.add-store-card {
+    border-style: dashed;
+    border-color: #dce3ec !important;
+    transition: all 0.25s ease;
+}
+
+.add-store-card:hover {
+    background-color: #f8fbff;
+    transform: translateY(-5px);
+}

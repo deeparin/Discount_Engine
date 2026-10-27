@@ -1,0 +1,27 @@
+services:
+  discount-engine-db:
+    image: mysql:8.0.36
+    restart: no
+    environment:
+      MYSQL_DATABASE: discount_engine
+      MYSQL_ROOT_PASSWORD: y4nbd2JrUVURy7qs
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: y4nbd2JrUVURy7qs
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+  
+  discount-engine-minio:
+    image: docker.io/pgsty/minio:RELEASE.2026-08-04T00-00-00Z
+    container_name: discount-engine-minio
+    restart: no
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password123
+    volumes:
+      - ./minio-data:/data
